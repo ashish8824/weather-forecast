@@ -11,8 +11,8 @@ const MainContainer = () => {
     <div
       className={
         toggle
-          ? "p-12 bg-gray-600 h-[1000px] text-white"
-          : "p-12 bg-gray-100 h-[1000px]"
+          ? "p-4 md:p-12 bg-gray-600 text-white"
+          : "p-4 md:p-12 bg-gray-100"
       }
     >
       <Header />

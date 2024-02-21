@@ -32,7 +32,7 @@ const Header = () => {
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        toast.success("Loaction fetched!");
+        toast.success("Location fetched!");
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
@@ -45,22 +45,22 @@ const Header = () => {
   };
 
   return (
-    <div className="flex gap-8 justify-center items-center">
-      <div className="w-2/12">
+    <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center">
+      <div className="w-full md:w-2/12">
         <ToggleButton />
       </div>
-      <div className="w-8/12 ">
+      <div className="w-full md:w-8/12">
         <SearchBar setQuery={setQuery} />
       </div>
       <button
         className={
           toggle
-            ? "w-2/12 bg-green-500 text-black font-bold rounded-full py-2 text-white"
-            : "w-2/12 bg-slate-400 text-black font-bold rounded-full py-2"
+            ? "w-full md:w-2/12 bg-green-500 font-bold rounded-full py-2 text-white"
+            : "w-full md:w-2/12 bg-slate-400 text-black font-bold rounded-full py-2"
         }
         onClick={handleLocationClick}
       >
-        <FontAwesomeIcon icon={faLocation} className=" mr-2" />
+        <FontAwesomeIcon icon={faLocation} className="mr-2" />
         Current Location
       </button>
     </div>

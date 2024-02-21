@@ -13,24 +13,24 @@ const SearchBar = ({ setQuery }) => {
   };
 
   return (
-    <div className="w-10/12">
-      <form onSubmit={(e) => e.preventDefault()}>
+    <div className="w-full md:w-10/12">
+      <form onSubmit={(e) => e.preventDefault()} className="flex">
         <input
           value={city}
           onChange={(e) => setCity(e.target.value)}
           className={
             toggle
-              ? "border border-black w-11/12  py-2 px-8 rounded-l-full focus:outline-none capitalize placeholder:lowercase text-black"
-              : "border border-black w-11/12  py-2 px-8 rounded-l-full focus:outline-none capitalize placeholder:lowercase"
+              ? "border border-black w-full md:w-11/12 py-2 px-8 rounded-l-full focus:outline-none capitalize placeholder:lowercase text-black"
+              : "border border-black w-full md:w-11/12 py-2 px-8 rounded-l-full focus:outline-none capitalize placeholder:lowercase"
           }
           type="text"
-          placeholder="search for a city ...."
+          placeholder="Search for a city ...."
         />
         <button
           className={
             toggle
-              ? "w-1/12 border border-black py-2 px-4 rounded-r-full bg-white text-black"
-              : "w-1/12 border border-black py-2 px-4 rounded-r-full bg-white"
+              ? "w-1/12 md:w-auto border border-black py-2 px-4 rounded-r-full bg-white text-black"
+              : "w-1/12 md:w-auto border border-black py-2 px-4 rounded-r-full bg-white"
           }
           onClick={handleSearchCity}
         >

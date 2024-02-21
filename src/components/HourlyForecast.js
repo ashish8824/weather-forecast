@@ -7,9 +7,6 @@ const HourlyForecast = () => {
   const toggle = useSelector((store) => store.toggle.isDark);
   if (weatherData === null) return;
   const { hourly: threeHourIntervals } = weatherData;
-  // console.log("hourl", threeHourIntervals);
-
-  // const { time, icon, temp, wind_speed, wind_deg } = threeHourIntervals;
 
   return (
     <div
@@ -20,7 +17,7 @@ const HourlyForecast = () => {
       }
     >
       <h1 className="font-bold mt-4">hour forecast:</h1>
-      <div className="flex gap-8 overflow-x-scroll w-full px-6">
+      <div className="flex gap-8 overflow-x-scroll w-full px-6 ">
         {threeHourIntervals.map((hourlyData, id) => (
           <HourlyCard details={hourlyData} key={id} />
         ))}

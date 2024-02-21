@@ -4,11 +4,11 @@ import HourlyForecast from "./HourlyForecast";
 
 const SecondarySection = () => {
   return (
-    <div className="flex gap-8 my-8 h-60">
-      <div className=" h-full w-3/12">
+    <div className="flex flex-col md:flex-row gap-8 my-8">
+      <div className="md:w-3/12">
         <FiveDaysForecast />
       </div>
-      <div className="  w-9/12">
+      <div className="md:w-9/12">
         <HourlyForecast />
       </div>
     </div>
