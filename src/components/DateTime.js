@@ -25,7 +25,7 @@ const DateTimeComponent = () => {
           {name}, {country}
         </h3>
         <h1 className="font-bold text-4xl md:text-6xl mt-2">
-          {formatToLocalTime(dt, timezone, "hh:mm A")}
+          {formatToLocalTime(dt, timezone, "hh:mm a")}
         </h1>
         <p className="mt-2 text-center">
           {formatToLocalTime(dt, timezone, "cccc, dd LLL ")}
