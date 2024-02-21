@@ -5,7 +5,7 @@ import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import ToggleButton from "./ToggleButton";
 import getFormattedWeatherData from "../utils/constants";
 import { addAPIData } from "../redux/slices/apiCallSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 const Header = () => {
@@ -13,6 +13,7 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
+  const toggle = useSelector((store) => store.toggle.isDark);
   const units = "metric";
 
   useEffect(() => {
@@ -52,7 +53,11 @@ const Header = () => {
         <SearchBar setQuery={setQuery} />
       </div>
       <button
-        className="w-2/12 bg-[#42f55d] text-black font-bold rounded-full py-2"
+        className={
+          toggle
+            ? "w-2/12 bg-green-500 text-black font-bold rounded-full py-2 text-white"
+            : "w-2/12 bg-slate-400 text-black font-bold rounded-full py-2"
+        }
         onClick={handleLocationClick}
       >
         <FontAwesomeIcon icon={faLocation} className=" mr-2" />

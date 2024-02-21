@@ -6,6 +6,7 @@ import { iconUrlFromCode } from "../utils/constants";
 
 const CurrentWeather = () => {
   const weatherData = useSelector((store) => store.weatherAPi.weatherData);
+  const toggle = useSelector((store) => store.toggle.isDark);
   if (weatherData === null) return;
   const {
     feels_like,
@@ -20,7 +21,13 @@ const CurrentWeather = () => {
   } = weatherData;
 
   return (
-    <div className="flex items-center justify-center  text-lg bg-[#d9d9d9] h-full rounded-2xl shadow-xl shadow-black">
+    <div
+      className={
+        toggle
+          ? "flex items-center justify-center  text-lg bg-gray-800 h-full rounded-2xl shadow-xl shadow-black"
+          : "flex items-center justify-center  text-lg bg-[#d9d9d9] h-full rounded-2xl shadow-xl shadow-black"
+      }
+    >
       <div className="first  w-4/12 h-full  px-6 py-2 ml-8">
         <div>
           <h1 className=" font-bold text-6xl">{temp.toFixed()}&deg;C</h1>

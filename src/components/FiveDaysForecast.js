@@ -5,11 +5,18 @@ import { kelvinToCelsius } from "../utils/helpers";
 
 const FiveDaysForecast = () => {
   const weatherData = useSelector((store) => store.weatherAPi.weatherData);
+  const toggle = useSelector((store) => store.toggle.isDark);
   if (weatherData === null) return;
   const { daily } = weatherData;
 
   return (
-    <div className="flex items-center justify-center flex-col text-lg bg-[#d9d9d9]  rounded-2xl shadow-xl shadow-black">
+    <div
+      className={
+        toggle
+          ? "flex items-center justify-center flex-col text-lg bg-gray-800  rounded-2xl shadow-xl shadow-black"
+          : "flex items-center justify-center flex-col text-lg bg-[#d9d9d9]  rounded-2xl shadow-xl shadow-black"
+      }
+    >
       <h1 className="font-bold mt-4">Five Days Forecast</h1>
       <ul>
         {daily.map((day, ind) => (
