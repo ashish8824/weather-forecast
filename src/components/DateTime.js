@@ -28,7 +28,7 @@ const DateTimeComponent = () => {
           {formatToLocalTime(dt, timezone, "hh:mm A")}
         </h1>
         <p className="mt-2 text-center">
-          {formatToLocalTime(dt, timezone, "dddd, DD MMM")}
+          {formatToLocalTime(dt, timezone, "cccc, dd LLL ")}
         </p>
         <div className="flex mt-3 gap-4 md:gap-6">
           <div className="flex items-center">
