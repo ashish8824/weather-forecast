@@ -16,7 +16,7 @@ const HourlyForecast = () => {
           : "flex items-center justify-center flex-col text-lg bg-[#d9d9d9]  rounded-2xl shadow-xl shadow-black pb-4"
       }
     >
-      <h1 className="font-bold mt-4">hour forecast:</h1>
+      <h1 className="font-bold mt-4">Hourly Forecast:</h1>
       <div className="flex gap-8 overflow-x-scroll w-full px-6 ">
         {threeHourIntervals.map((hourlyData, id) => (
           <HourlyCard details={hourlyData} key={id} />
